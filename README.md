@@ -64,20 +64,9 @@ token_count = counter.count_tokens(large_list, batch_size=500)
 print(f"The large list contains {token_count} tokens in total.")
 ```
 
-## Documentation
-
-For more detailed information on how to use the Llama 3.2 Token Counter, please refer to our [documentation](link-to-your-documentation).
-
 ## Contributing
 
-We welcome contributions to the Llama 3.2 Token Counter! If you'd like to contribute, please follow these steps:
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/AmazingFeature`)
-3. Make your changes
-4. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-5. Push to the branch (`git push origin feature/AmazingFeature`)
-6. Open a Pull Request
+We welcome contributions to the Llama 3.2 Token Counter! If you'd like to contribute, please look at [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
 
 ## License
 
