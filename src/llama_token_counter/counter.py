@@ -1,15 +1,20 @@
-import asyncio
-import logging
-from typing import Union, List, Optional
+import os
 from pathlib import Path
+from typing import List, Union
 from .custom_tokenizer import CustomTokenizer
 
-logger = logging.getLogger(__name__)
-
 class LlamaTokenCounter:
-    def __init__(self, tokenizer_dir: Path):
-        self.tokenizer_dir = tokenizer_dir
-        self.tokenizer = CustomTokenizer(tokenizer_dir)
+    def __init__(self):
+        # Get the directory of the current file
+        current_dir = Path(__file__).parent
+        # Set the default tokenizer directory to be within the package
+        default_tokenizer_dir = current_dir / "tokenizer"
+        
+        if not default_tokenizer_dir.exists():
+            raise ValueError(f"Default tokenizer directory not found: {default_tokenizer_dir}")
+        
+        self.tokenizer = CustomTokenizer(tokenizer_dir=str(default_tokenizer_dir))
+        self.max_tokens = self.tokenizer.model_max_length
 
     def tokenize(self, text: str) -> List[int]:
         return self.tokenizer.encode(text)

@@ -15,6 +15,7 @@ The Llama 3.2 Token Counter is a Python package that provides an easy way to cou
 - Easy-to-use Python API
 - Supports both string and list of strings inputs
 - Asynchronous token counting support
+- Batch processing for large inputs
 - Lightweight and efficient
 
 ## Installation
@@ -44,7 +45,7 @@ print(f"The text contains {token_count} tokens.")
 # Asynchronous token counting
 async def count_async():
     text = "This is an async token counting example."
-    token_count = await counter.count_tokens(text, async_mode=True)
+    token_count = await counter.count_tokens(text)
     print(f"The async text contains {token_count} tokens.")
 
 asyncio.run(count_async())
@@ -95,7 +96,7 @@ To run the tests, follow these steps:
 
 3. Run the tests:
    ```
-   python -m unittest discover tests
+   pytest tests
    ```
 
-Make sure you have the necessary tokenizer files in the `src/tokenizer` directory before running the tests.
+Make sure you have the necessary tokenizer files in the `src/llama_token_counter/tokenizer` directory before running the tests.
