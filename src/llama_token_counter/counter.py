@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from typing import List, Union
+from typing import List, Union, Optional
 from .custom_tokenizer import CustomTokenizer
 
 class LlamaTokenCounter:

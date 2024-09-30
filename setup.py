@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="llama3.2-token-counter",
-    version="0.2.0",
+    version="0.3.0",
     author="anthoeknee",
     author_email="pacyheb@protonmail.com",
     description="A simple token counter for Llama 3.2 models.",
