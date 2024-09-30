@@ -1,31 +1,7 @@
-# Python-related
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-
-# Virtual environments
-venv/
-env/
-.env
-
-# IDEs and editors
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS-generated files
-.DS_Store
-Thumbs.db
-
-# Project-specific
-tokenizer/
-
-# Logs and databases
-*.log
-*.sqlite3
 
 # Distribution / packaging
 .Python
@@ -41,27 +17,33 @@ parts/
 sdist/
 var/
 wheels/
+share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
 # Unit test / coverage reports
 htmlcov/
 .tox/
+.nox/
 .coverage
 .coverage.*
 .cache
 nosetests.xml
 coverage.xml
 *.cover
+*.py,cover
 .hypothesis/
 .pytest_cache/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
+cover/
 
 # Environments
 .env
@@ -72,14 +54,9 @@ ENV/
 env.bak/
 venv.bak/
 
-# mypy
-.mypy_cache/
+# IDE
+.vscode/
+.idea/
 
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# Sphinx documentation
-docs/_build/
+# Project specific
+src/llama_token_counter/_version.py

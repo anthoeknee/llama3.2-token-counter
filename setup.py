@@ -1,37 +1,39 @@
 from setuptools import setup, find_packages
 
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
+with open("requirements.txt", "r", encoding="utf-8") as fh:
+    requirements = [req for req in fh.read().splitlines() if 'transformers' not in req]
+
 setup(
-    name="llama3.2_token_counter",
+    name="llama3.2-token-counter",
     version="0.1.0",
-    packages=find_packages(),
-    include_package_data=True,
-    package_data={"llama_token_counter": ["tokenizer_config.json"]},
-    install_requires=["transformers", "regex"],
     author="anthoeknee",
     author_email="pacyheb@protonmail.com",
     description="A simple token counter for Llama 3.2 models.",
-    long_description=open("README.md").read(),
+    long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/anthoeknee/llama_token_counter",
+    url="https://github.com/anthoeknee/llama3.2-token-counter",
     project_urls={
-        "Bug Tracker": "https://github.com/anthoeknee/llama_token_counter/issues",
-        "Source Code": "https://github.com/anthoeknee/llama_token_counter",
+        "Bug Tracker": "https://github.com/anthoeknee/llama3.2-token-counter/issues",
     },
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
-        "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
-        "Topic :: Software Development :: Libraries :: Python Modules",
-        "Topic :: Text Processing :: Linguistic",
     ],
-    license_files=["LICENSE"],
-    python_requires=">=3.7",
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
+    python_requires=">=3.11",
+    install_requires=requirements,
+    include_package_data=True,
+    package_data={
+        "llama_token_counter": ["tokenizer/*.json"],
+    },
+    test_suite="tests",
+    tests_require=["pytest"],
 )
